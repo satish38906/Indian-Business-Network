@@ -1,0 +1,149 @@
+@startuml Indian_Business_Network_Class_Diagram
+
+' ==================== ENTITIES ====================
+
+class User {
+  - id: Integer
+  - name: String
+  - email: String
+  - password: String
+  - role: String
+  - created_at: Timestamp
+  + signup()
+  + login()
+  + updateProfile()
+  + deleteUser()
+}
+
+class Member {
+  - id: Integer
+  - user_id: Integer
+  - chapter_id: Integer
+  - business_name: String
+  - business_category: String
+  - status: String
+  - contact: String
+  - image: String
+  - created_at: Timestamp
+  - updated_at: Timestamp
+  + createMember()
+  + getMembersByChapter()
+  + getMemberById()
+  + updateMember()
+  + updateMemberImage()
+  + deleteMember()
+}
+
+class Chapter {
+  - id: Integer
+  - name: String
+  - city: String
+  - description: String
+  - president_id: Integer
+  - created_at: Timestamp
+  + createChapter()
+  + getChapters()
+  + updateChapter()
+  + deleteChapter()
+}
+
+class Referral {
+  - id: Integer
+  - from_member_id: Integer
+  - to_member_id: Integer
+  - chapter_id: Integer
+  - meeting_id: Integer
+  - business_name: String
+  - contact_name: String
+  - contact_phone: String
+  - referral_value: Decimal
+  - status: String
+  - notes: String
+  - created_at: Timestamp
+  - updated_at: Timestamp
+  + createReferral()
+  + getAllReferrals()
+  + getReferralById()
+  + updateReferralStatus()
+  + transferReferral()
+  + deleteReferral()
+}
+
+class Meeting {
+  - id: Integer
+  - chapter_id: Integer
+  - title: String
+  - meeting_date: Timestamp
+  - location: String
+  - description: String
+  - created_by: Integer
+  - created_at: Timestamp
+  + createMeeting()
+  + getMeetings()
+  + updateMeeting()
+  + deleteMeeting()
+}
+
+class Attendance {
+  - id: Integer
+  - meeting_id: Integer
+  - member_id: Integer
+  - status: String
+  - notes: String
+  - created_at: Timestamp
+  + markAttendance()
+  + getAttendance()
+  + updateAttendance()
+}
+
+class Visitor {
+  - id: Integer
+  - meeting_id: Integer
+  - name: String
+  - business_name: String
+  - contact_phone: String
+  - email: String
+  - invited_by: Integer
+  - notes: String
+  - created_at: Timestamp
+  + addVisitor()
+  + getVisitors()
+}
+
+' ==================== RELATIONSHIPS ====================
+
+User "1" -- "0..1" Member : has
+User "1" -- "0..*" Chapter : presides
+Member "1" -- "0..*" Referral : gives
+Member "1" -- "0..*" Referral : receives
+Member "*" -- "1" Chapter : belongs to
+Chapter "1" -- "0..*" Meeting : hosts
+Chapter "1" -- "0..*" Referral : contains
+Meeting "1" -- "0..*" Attendance : tracks
+Meeting "1" -- "0..*" Visitor : invites
+Meeting "1" -- "0..*" Referral : records
+Member "1" -- "0..*" Attendance : attends
+Member "1" -- "0..*" Visitor : invites
+User "1" -- "0..*" Meeting : creates
+
+' ==================== NOTES ====================
+
+note right of User
+  Roles: admin, president, 
+  vice_president, secretary, member
+end note
+
+note right of Referral
+  Status: given, accepted, closed
+end note
+
+note right of Member
+  Status: active, inactive
+  Unique: business_category per chapter
+end note
+
+note right of Attendance
+  Status: present, late, absent
+end note
+
+@enduml

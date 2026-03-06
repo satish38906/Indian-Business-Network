@@ -1,0 +1,437 @@
+{
+  "info": {
+    "name": "Referral & Meeting Management API",
+    "description": "Complete API collection for BNI-style referral system and meeting management",
+    "version": "1.0.0"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Referrals",
+      "item": [
+        {
+          "name": "Create Referral",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"to_member_id\": 2,\n  \"chapter_id\": 1,\n  \"meeting_id\": 1,\n  \"business_name\": \"ABC Corporation\",\n  \"contact_name\": \"John Doe\",\n  \"contact_phone\": \"+1234567890\",\n  \"referral_value\": 5000.00,\n  \"notes\": \"Web development project\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/referrals",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "referrals"]
+            }
+          }
+        },
+        {
+          "name": "Get My Referrals",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/referrals",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "referrals"]
+            }
+          }
+        },
+        {
+          "name": "Get Referral by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/referrals/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "referrals", "1"]
+            }
+          }
+        },
+        {
+          "name": "Update Referral Status",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"accepted\",\n  \"notes\": \"Meeting scheduled with client\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/referrals/1/status",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "referrals", "1", "status"]
+            }
+          }
+        },
+        {
+          "name": "Get Chapter Referrals",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/referrals/chapter/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "referrals", "chapter", "1"]
+            }
+          }
+        },
+        {
+          "name": "Get Member Report",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/referrals/report/member/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "referrals", "report", "member", "1"]
+            }
+          }
+        },
+        {
+          "name": "Get Chapter Report",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/referrals/report/chapter/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "referrals", "report", "chapter", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Referral",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/referrals/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "referrals", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Meetings",
+      "item": [
+        {
+          "name": "Create Meeting",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"chapter_id\": 1,\n  \"title\": \"Weekly Chapter Meeting\",\n  \"meeting_date\": \"2024-01-20T09:00:00Z\",\n  \"location\": \"Conference Room A\",\n  \"description\": \"Regular weekly meeting\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/meetings",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "meetings"]
+            }
+          }
+        },
+        {
+          "name": "Get All Meetings",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/meetings",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "meetings"]
+            }
+          }
+        },
+        {
+          "name": "Get Chapter Meetings",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/meetings/chapter/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "meetings", "chapter", "1"]
+            }
+          }
+        },
+        {
+          "name": "Get Meeting by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/meetings/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "meetings", "1"]
+            }
+          }
+        },
+        {
+          "name": "Update Meeting",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"chapter_id\": 1,\n  \"title\": \"Updated Meeting Title\",\n  \"meeting_date\": \"2024-01-20T09:00:00Z\",\n  \"location\": \"Conference Room B\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/meetings/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "meetings", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Meeting",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/meetings/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "meetings", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Attendance",
+      "item": [
+        {
+          "name": "Record Attendance",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"member_id\": 5,\n  \"status\": \"present\",\n  \"notes\": \"On time\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/meetings/1/attendance",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "meetings", "1", "attendance"]
+            }
+          }
+        },
+        {
+          "name": "Record Late Attendance",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"member_id\": 6,\n  \"status\": \"late\",\n  \"notes\": \"Arrived 10 minutes late\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/meetings/1/attendance",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "meetings", "1", "attendance"]
+            }
+          }
+        },
+        {
+          "name": "Get Meeting Attendance",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/meetings/1/attendance",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "meetings", "1", "attendance"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Visitors",
+      "item": [
+        {
+          "name": "Add Visitor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John Visitor\",\n  \"business_name\": \"Visitor Corporation\",\n  \"contact_phone\": \"+1234567890\",\n  \"email\": \"john@visitor.com\",\n  \"invited_by\": 5,\n  \"notes\": \"Interested in membership\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/meetings/1/visitors",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "meetings", "1", "visitors"]
+            }
+          }
+        },
+        {
+          "name": "Get Meeting Visitors",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/meetings/1/visitors",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "meetings", "1", "visitors"]
+            }
+          }
+        },
+        {
+          "name": "Delete Visitor",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/meetings/visitors/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "meetings", "visitors", "1"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+🚀 Server running on 0.0.0.0:5001
+GET / - 2026-02-20T06:57:10.040Z
+POST /api/auth/login - 2026-02-20T06:57:17.461Z
+Login attempt: { email: 'deepak@gmail.com', passwordProvided: true }
+Request body keys: [ 'email', 'password' ]
+User lookup result: { id: 7, email: 'deepak@gmail.com' }
+POST /api/auth/login - 2026-02-20T06:58:26.522Z
+Login attempt: { email: 'deepak@gmail.com', passwordProvided: true }
+Request body keys: [ 'email', 'password' ]
+User lookup result: { id: 7, email: 'deepak@gmail.com' }
+GET /api/members/me/data - 2026-02-20T06:58:57.904Z
+Fetching member profile for userId: 7
+Member profile found: Deepak Engineering 
+GET /api/leadership - 2026-02-20T07:00:45.177Z
+GET /api/meetings - 2026-02-20T07:00:51.751Z
+GET /api/members - 2026-02-20T07:00:51.761Z
+GET /api/leadership - 2026-02-20T07:00:55.258Z
+GET /api/meetings - 2026-02-20T07:02:31.711Z
+GET /api/members - 2026-02-20T07:02:31.726Z
+GET /api/leadership - 2026-02-20T07:03:05.219Z
+GET / - 2026-02-20T07:05:11.632Z
+POST /api/auth/login - 2026-02-20T07:06:36.931Z
+Login attempt: { email: 'deepak@gmail.com', passwordProvided: true }
+Request body keys: [ 'email', 'password' ]
+User lookup result: { id: 7, email: 'deepak@gmail.com' }
+GET /api/members/me/data - 2026-02-20T07:07:01.813Z
+Fetching member profile for userId: 7
+Member profile found: Deepak Engineering 
+GET /api/leadership - 2026-02-20T07:09:21.564Z
+POST /api/auth/login - 2026-02-20T07:20:20.406Z
+Login attempt: { email: 'deepak@gmail.com', passwordProvided: true }
+Request body keys: [ 'email', 'password' ]
+User lookup result: { id: 7, email: 'deepak@gmail.com' }
+GET /api/members/me/data - 2026-02-20T07:20:53.313Z
+Fetching member profile for userId: 7
+Member profile found: Deepak Engineering 
+GET /api/meetings/1 - 2026-02-20T07:22:47.886Z
+GET /api/dashboard/member - 2026-02-20T07:22:47.890Z
+Fetching dashboard for userId: 7
+GET /api/dashboard/member - 2026-02-20T07:22:47.903Z
+Fetching dashboard for userId: 7
+GET /api/leadership - 2026-02-20T07:22:55.933Z
+GET /api/members/1 - 2026-02-20T07:24:37.652Z
+GET /api/meetings/1 - 2026-02-20T07:24:54.455Z
+GET /api/dashboard/member - 2026-02-20T07:24:54.465Z
+Fetching dashboard for userId: 7
+GET /api/meetings/1 - 2026-02-20T07:25:12.808Z
+GET /api/dashboard/member - 2026-02-20T07:25:12.819Z
+Fetching dashboard for userId: 7
+GET /api/leadership - 2026-02-20T07:25:15.150Z
+GET /api/members/1 - 2026-02-20T07:25:15.171Z
+GET /api/dashboard/member - 2026-02-20T07:25:22.539Z
+Fetching dashboard for userId: 7
+GET /api/meetings/1 - 2026-02-20T07:25:22.548Z
+GET /api/dashboard/member - 2026-02-20T07:27:09.458Z
+Fetching dashboard for userId: 7
+GET /api/meetings/1 - 2026-02-20T07:27:09.469Z
+GET /api/dashboard/member - 2026-02-20T07:27:10.655Z
+Fetching dashboard for userId: 7
+GET /api/meetings/1 - 2026-02-20T07:27:10.657Z
+GET /api/dashboard/member - 2026-02-20T07:27:10.666Z
+Fetching dashboard for userId: 7
+GET /api/dashboard/member - 2026-02-20T07:27:19.924Z
+Fetching dashboard for userId: 7
+GET /api/meetings/1 - 2026-02-20T07:27:19.933Z
+GET /api/dashboard/member - 2026-02-20T07:28:42.398Z
+Fetching dashboard for userId: 7
+GET /api/meetings/1 - 2026-02-20T07:28:42.408Z
+GET /api/meetings/1 - 2026-02-20T07:31:12.296Z
+GET /api/dashboard/member - 2026-02-20T07:31:12.310Z
+Fetching dashboard for userId: 7
+GET /api/dashboard/member - 2026-02-20T07:31:12.321Z
+Fetching dashboard for userId: 7
+GET /api/members/me/data - 2026-02-20T07:33:00.868Z
+Fetching member profile for userId: 7
+Member profile found: Deepak Engineering 
+GET /api/referrals - 2026-02-20T07:33:01.121Z
+getAllReferrals called by userId: 7 role: member
+Member found: { memberId: 8, userId: 7 }
+Returning referrals for member: 6
+Sample referral: {
+  id: 107,
+  from_user_id: null,
+  to_user_id: null,
+  chapter_id: null,
+  meeting_id: null,
+  business_name: 'Metal Finance ',
+  contact_number: null,
+  amount: '5000',
+  status: 'given',
+  created_at: 2026-02-17T10:13:31.015Z,
+  from_member_id: 11,
+  to_member_id: 8,
+  from_member_name: 'Satish ',
+  to_member_name: 'Deepak '
+}
+GET /api/meetings/1 - 2026-02-20T07:33:35.209Z
+GET /api/dashboard/member - 2026-02-20T07:33:35.217Z
+Fetching dashboard for userId: 7
+GET /api/meetings/1 - 2026-02-20T07:35:55.646Z
+GET /api/dashboard/member - 2026-02-20T07:35:55.662Z
+Fetching dashboard for userId: 7
+GET /api/leadership - 2026-02-20T07:36:04.225Z
+GET /api/members/1 - 2026-02-20T07:36:04.262Z
+POST /api/auth/login - 2026-02-20T07:36:49.113Z
+Login attempt: { email: 'deepak@gmail.com', passwordProvided: true }
+Request body keys: [ 'email', 'password' ]
+User lookup result: { id: 7, email: 'deepak@gmail.com' }
+GET /api/meetings/1 - 2026-02-20T07:36:49.803Z
+GET /api/dashboard/member - 2026-02-20T07:36:49.815Z
+Fetching dashboard for userId: 7
+GET /api/dashboard/member - 2026-02-20T07:36:49.817Z
+Fetching dashboard for userId: 7
+POST /api/referrals - 2026-02-20T07:37:06.600Z
+GET /api/dashboard/member - 2026-02-20T07:37:06.954Z
+Fetching dashboard for userId: 7
+GET /api/meetings/1 - 2026-02-20T07:37:06.962Z
+POST /api/auth/login - 2026-02-20T07:38:50.489Z
+Login attempt: { email: 'satishyadav2547@gmail.com', passwordProvided: true }
+Request body keys: [ 'email', 'password' ]
+User lookup result: { id: 3, email: 'satishyadav2547@gmail.com' }
+GET /api/meetings/1 - 2026-02-20T07:38:51.109Z
+GET /api/dashboard/member - 2026-02-20T07:38:51.131Z
+Fetching dashboard for userId: 3
+GET /api/dashboard/member - 2026-02-20T07:38:51.137Z
+Fetching dashboard for userId: 3
+GET /api/leadership - 2026-02-20T07:38:53.272Z
+GET /api/members/1 - 2026-02-20T07:38:53.326Z
+GET /api/meetings/1 - 2026-02-20T07:38:56.356Z
+GET /api/dashboard/member - 2026-02-20T07:38:56.361Z
+Fetching dashboard for userId: 3
+GET /api/meetings - 2026-02-20T07:38:57.117Z
+GET /api/members - 2026-02-20T07:38:57.129Z
+POST /api/meetings - 2026-02-20T07:40:18.024Z
+Create meeting request: {
+  chapter_id: 1,
+  title: 'Expo ',
+  meeting_date: '2026-02-25T07:30:00',
+  userId: 3,
+  userRole: 'president'
+}
+Meeting created successfully: 4
+GET /api/meetings - 2026-02-20T07:40:18.209Z

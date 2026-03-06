@@ -1,0 +1,57 @@
+{
+  "info": {
+    "name": "Dashboard API",
+    "description": "Role-based dashboard endpoints",
+    "version": "1.0.0"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Member Dashboard",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/dashboard/member",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "dashboard", "member"]
+        },
+        "description": "Get member's personal dashboard with referrals, attendance, and recent activity"
+      }
+    },
+    {
+      "name": "President Dashboard",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/dashboard/president",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "dashboard", "president"]
+        },
+        "description": "Get chapter-level dashboard with statistics, top referrers, and recent meetings (President/Admin only)"
+      }
+    }
+  ]
+}
